@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="502.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HelpController">
+   <children>
+      <VBox layoutX="7.0" prefHeight="40.0" prefWidth="721.0" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+      <Hyperlink fx:id="aiciHyperlink" layoutX="573.0" layoutY="59.0" onMouseClicked="#pressAiciHyperlink" prefHeight="23.0" prefWidth="30.0" text="aici" />
+      <Label layoutX="25.0" layoutY="59.0" prefHeight="23.0" prefWidth="588.0" text="Pentru mai multe informatii despre modificarea contrastului si a nivelelor de culoare din imagini apasati        ." />
+      <Button layoutX="622.0" layoutY="445.0" mnemonicParsing="false" onAction="#changeToPreviousScene" prefHeight="25.0" prefWidth="127.0" text="Back to first scene" />
+      <TabPane layoutX="25.0" layoutY="94.0" prefHeight="339.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Contrast">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="14.0" text="Cum se schimba contrastul unei imagini?" />
+                        <Text layoutX="22.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   Contrastul este diferența dintre înnegrirea maximă și cea minimă care se pot vedea într-o imagine fotografică. În percepția vizuală a lumii reale, contrastul este determinat de diferența dintre culoarea și luminozitatea unui obiect și alte obiecte din interiorul aceluiași câmp vizual." wrappingWidth="652.091796875" />
+                        <TextArea layoutX="20.0" layoutY="96.0" prefHeight="200.0" prefWidth="656.0" text="1. Apasati pe butonul Load image pentru a alege o imagine.&#10;2. Lasati apasat butonul Contrast(acest buton este selectat default).&#10;3. Apasati butonu Modify image.&#10;4. In noua fereastra, introduceti valorea contrastului pe care doriti sa o folositi la modificarea imaginii selectate anterior.&#10;5. Selectati o optiune pentru imaginea modificata. Puteti folosi acelasi nume prin selectarea optiunii Foloseste acelasi &#10;nume,  introduce un nume in text boxul gol sau alege una dintre optiunele sugerate.&#10;6. Apasati butonul Salveaza pentru aplicarea modificarilor.&#10;7. Pentru intoarcerea la meniul anterior apasati butonul Back." />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Colours">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="310.0" prefWidth="546.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="24.0" text="Cum se schimba culorile intr-o imagine?" />
+                        <TableView fx:id="tableColourLevel" layoutX="36.0" layoutY="188.0" prefHeight="108.0" prefWidth="657.0">
+                          <columns>
+                            <TableColumn fx:id="numeCuloareColumn" prefWidth="99.0" text="Nume culoare" />
+                              <TableColumn fx:id="nivelVerdeColumn" minWidth="0.0" prefWidth="167.0" text="Valorare nivel verde" />
+                              <TableColumn fx:id="nivelAlbastruColumn" minWidth="0.0" prefWidth="186.0" text="Valoare nivel albastru" />
+                            <TableColumn fx:id="nivelRosuColumn" minWidth="2.0" prefWidth="181.0" text="Valoare nivel rosu" />
+                          </columns>
+                        </TableView>
+                        <TextArea layoutX="41.0" layoutY="51.0" prefHeight="131.0" prefWidth="654.0" text="1. Apasati pe butonul Load image pentru a alege o imagine.&#10;2. Apasati butonul Colours(default este selectat butonul Contrast).&#10;3. Apasati butonu Modify image.&#10;4. In noua fereastra, alegeti culorile carora sa le modificati nivelul in imagine prin selectarea si deselectarea&#10;butoanelor ce au asociate denumirea unei culori(default, sunt selectate toate culorile).&#10;5. Pentru alegerea nivelului unei culori folositi sliderul corespunzator.&#10;6. Selectati o optiune pentru imaginea modificata. Puteti folosi acelasi nume prin selectarea optiunii Using same &#10;name sau introduce un nume in text boxul gol.&#10;7. Apasati butonul Salveaza pentru aplicarea modificarilor.&#10;8. Pentru intoarcerea la meniul anterior apasati butonul Back.&#10;&#10;Explicatii&#10;   Cu totii am auzit de pixel. Pixelul (denumire provenita din “picture element”) este cel mai mic element al unei&#10; imagini digitale. Pixelii sunt patratelele colorate care se vad cand mariti la maxim o imagine in photoshop.&#10;Imaginea color RGB este de fapt o combinatie de 3 imagini pe 8 biti, cate una pentru canalele rosu (RED), &#10;verde(GREEN) si albastru(BLUE). Imaginea RGB este o imagine cu 8 biti pe canal sau imagine pe 24 de biti, &#10;capabila sa redea (2^8)x(2^8)x(2^8) culori, adica 16.7 milioane de culori. Modul de culoare este o metoda &#10;de a asocia componentele primare si de a le da valori numerice. Spre exemplu, modul RGB asociaza 3 &#10;componente primare (Red-Green-Blue)." />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

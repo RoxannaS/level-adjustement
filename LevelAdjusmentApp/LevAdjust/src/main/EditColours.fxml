@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="502.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.EditColoursController">
+   <children>
+      <VBox layoutY="2.0" prefHeight="25.0" prefWidth="800.0">
+         <children>
+            <ToolBar fx:id="toolBar">
+               <items>
+                  <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="660.0" />
+                  <Button mnemonicParsing="false" onAction="#changeToAboutScene" prefWidth="90.0" text="Help" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+      <Button layoutX="681.0" layoutY="445.0" mnemonicParsing="false" onAction="#changeEditColoursScene" prefHeight="25.0" prefWidth="90.0" text="Back" />
+      <CheckBox fx:id="sameNameCheckBox" layoutX="214.0" layoutY="440.0" mnemonicParsing="false" text="Using same name" />
+      <TextField fx:id="newImageName" layoutX="214.0" layoutY="411.0" />
+      <Label layoutX="27.0" layoutY="415.0" text="Introduceti numele imaginii noi:" />
+      <Label layoutX="33.0" layoutY="80.0" prefHeight="33.0" prefWidth="208.0" text="Alegeti ce nivel si valoarea nivelului:" />
+      <AnchorPane fx:id="background" layoutX="33.0" layoutY="139.0" onMouseClicked="#changeSliderValues" prefHeight="221.0" prefWidth="291.0" />
+      <ToggleButton fx:id="redLevelToggleButton" layoutX="343.0" layoutY="119.0" mnemonicParsing="false" onAction="#pressRedLevelToggleButton" prefHeight="25.0" prefWidth="90.0" selected="true" text="Red" />
+      <ToggleButton fx:id="yellowLevelToggleButton" layoutX="343.0" layoutY="159.0" mnemonicParsing="false" onAction="#pressYellowLevelToggleButton" prefHeight="25.0" prefWidth="90.0" selected="true" text="Yellow" />
+      <ToggleButton fx:id="cyansLevelToggleButton" layoutX="343.0" layoutY="249.0" mnemonicParsing="false" onAction="#pressCyansLevelToggleButton" prefHeight="25.0" prefWidth="90.0" selected="true" text="Cyans" />
+      <ToggleButton fx:id="magentaLevelToggleButton" layoutX="343.0" layoutY="332.0" mnemonicParsing="false" onAction="#pressMagentaLevelToggleButton" prefHeight="25.0" prefWidth="90.0" selected="true" text="Magenta" />
+      <TextField fx:id="magentaLevelValue" layoutX="667.0" layoutY="344.0" prefHeight="25.0" prefWidth="76.0" promptText="Magenta Level Value" />
+      <TextField fx:id="blueLevelValue" layoutX="667.0" layoutY="297.0" prefHeight="25.0" prefWidth="76.0" promptText="Blue Level Value" />
+      <TextField fx:id="yellowLevelValue" layoutX="667.0" layoutY="159.0" prefHeight="25.0" prefWidth="76.0" promptText="Yellow Level Value" />
+      <TextField fx:id="greenLevelValue" layoutX="667.0" layoutY="204.0" prefHeight="25.0" prefWidth="76.0" promptText="Green Level Value" />
+      <TextField fx:id="redLevelValue" layoutX="667.0" layoutY="119.0" prefHeight="25.0" prefWidth="76.0" promptText="Red Level Value" />
+      <Pane fx:id="pane" layoutX="436.0" layoutY="105.0" prefHeight="292.0" prefWidth="229.0">
+         <children>
+            <Slider fx:id="redLevelSlider" blockIncrement="1.0" layoutX="14.0" layoutY="14.0" max="255.0" minorTickCount="0" onMouseClicked="#changeSliderValues" prefHeight="33.0" prefWidth="202.0" showTickLabels="true" />
+            <Slider fx:id="yellowLevelSlider" blockIncrement="1.0" layoutX="14.0" layoutY="57.0" max="255.0" onMouseClicked="#changeSliderValues" prefHeight="33.0" prefWidth="202.0" showTickLabels="true" />
+            <Slider fx:id="greenLevelSlider" blockIncrement="1.0" layoutX="14.0" layoutY="102.0" max="255.0" onMouseClicked="#changeSliderValues" prefHeight="33.0" prefWidth="202.0" showTickLabels="true" />
+            <Slider fx:id="cyansLevelSlider" blockIncrement="1.0" layoutX="14.0" layoutY="146.0" max="255.0" onMouseClicked="#changeSliderValues" prefHeight="33.0" prefWidth="202.0" showTickLabels="true" />
+            <Slider fx:id="blueLevelSlider" blockIncrement="1.0" layoutX="14.0" layoutY="188.0" max="255.0" onMouseClicked="#changeSliderValues" prefHeight="33.0" prefWidth="202.0" showTickLabels="true" />
+            <Slider fx:id="magentaLevelSlider" blockIncrement="1.0" layoutX="14.0" layoutY="229.0" max="255.0" onMouseClicked="#changeSliderValues" prefHeight="33.0" prefWidth="202.0" showTickLabels="true" />
+         </children>
+      </Pane>
+      <TextField fx:id="cyansLevelValue" layoutX="667.0" layoutY="249.0" prefHeight="25.0" prefWidth="76.0" promptText="Cyans Level Value" />
+      <ToggleButton fx:id="blueLevelToggleButton" layoutX="343.0" layoutY="291.0" mnemonicParsing="false" onAction="#pressBlueLevelToggleButton" prefHeight="25.0" prefWidth="90.0" selected="true" text="Blue" />
+      <ToggleButton fx:id="greenLevelToggleButton" layoutX="343.0" layoutY="204.0" mnemonicParsing="false" onAction="#pressGreenLevelToggleButton" prefHeight="25.0" prefWidth="90.0" selected="true" text="Green" />
+      <Button layoutX="380.0" layoutY="411.0" mnemonicParsing="false" onAction="#saveModidifiedColoursImage" prefHeight="25.0" prefWidth="90.0" text="Salveaza" />
+      <ListView fx:id="selectedImagePathListView" layoutX="396.0" layoutY="55.0" prefHeight="25.0" prefWidth="310.0" />
+   </children>
+</AnchorPane>
